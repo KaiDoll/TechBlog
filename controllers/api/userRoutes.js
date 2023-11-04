@@ -31,7 +31,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await user.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.userId = user.id;
       req.session.username =user.username;
-      req.session.logged_in = true;
+      req.session.loggedIn = true;
       
       res.json({ user, message: 'You are now logged in!' });
     });
@@ -52,6 +52,7 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
