@@ -49,6 +49,28 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+router.get('/post/:id', async (req, res) => {
+  try {
+    const commentData = await Comment.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    const comment = commentData.get({ plain: true });
+
+    res.render('comment', {
+      ...comment,
+      loggedIn: req.session.loggedIn
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
@@ -76,17 +98,16 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login'); //referring to login handblebar page
 });
 
 router.get('/signup', (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  console.log("/signup");
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
-  res.render('signup');
+  res.render('signup'); //referring to signup handblebar page
 });
 
 module.exports = router;
