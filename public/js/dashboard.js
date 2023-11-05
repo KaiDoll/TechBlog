@@ -1,14 +1,14 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const username = document.querySelector('#post-username').value.trim();
+    //const username = document.querySelector('#post-username').value.trim();
     const title = document.querySelector('#post-title').value.trim();
     const content = document.querySelector('#post-content').value.trim();
   
-    if (username && title && content) {
-      const response = await fetch(`/dashboard`, {
+    if (title && content) {4
+      const response = await fetch(`/api/post/${id}`, {
         method: 'POST',
-        body: JSON.stringify({ username, title, content }),
+        body: JSON.stringify({ title, content }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -33,16 +33,35 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to delete project');
+        alert('Failed to delete post');
       }
     }
   };
   
+  const editFormHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/post/${id}`, {
+        method: 'PUT',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to update post');
+      }
+    }
+  };
   document
-    .querySelector('.new-project-form')
+    .querySelector('.new-post-form')
     .addEventListener('submit', newFormHandler);
   
   document
-    .querySelector('.project-list')
+    .querySelector('.post-list')
     .addEventListener('click', delButtonHandler);
+
+  document
+    .querySelector('.post-list')
+    .addEventListener('submit', editFormHandler);
   
