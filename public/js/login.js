@@ -10,13 +10,13 @@ const loginFormHandler = async (event) => {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/user/login', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, password }), //grab username and pass from the login form
       headers: { 'Content-Type': 'application/json' },
     });
-
+//send the information to api folder-user-routes
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/dashboard'); 
+      document.location.replace('/'); 
     } else {
       alert(response.statusText);
     }

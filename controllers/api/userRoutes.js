@@ -9,8 +9,8 @@ router.post('/', async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.userId = newUser.id;
-      req.session.username = newUser.username;
+      // req.session.userId = userData.id;
+      // req.session.username = userData.username;
       req.session.loggedIn = true;
 
       res.status(200).json(userData);
@@ -23,13 +23,14 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({ where: { username: req.body.username } });
-
+//go to the database and find the user by their username.
     if (!user) {
       res  
         .status(400)
         .json({ message: 'No username found' });
       return;
     }
+    //if we find them then we check if their password is valid
 
     const validPassword = await user.checkPassword(req.body.password);
 
@@ -41,18 +42,18 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.userId = user.id;
-      req.session.username =user.username;
+      // req.session.userId = user.id;
+      // req.session.username =user.username;
       req.session.loggedIn = true;
       
-      res.json({ user, message: 'You are now logged in!' });
+      res.json({ user: user, message: 'You are now logged in!' });
     });
 
   } catch (err) {
     res.status(400).json(err);
   }
 });
-
+//we send it to the front end
 
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
