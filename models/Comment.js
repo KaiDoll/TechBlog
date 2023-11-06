@@ -13,7 +13,7 @@ Comment.init(
     },
     comment: {
       type: DataTypes.STRING,
-    },
+    }
   },
   {
     sequelize,
