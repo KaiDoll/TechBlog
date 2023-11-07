@@ -38,30 +38,30 @@ const newFormHandler = async (event) => { //id not defined
   //   }
   // };
   
-  const editFormHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
+  // const editFormHandler = async (event) => {
+  //   if (event.target.hasAttribute('data-id')) {
+  //     const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/post/${id}`, {
-        method: 'PUT',
-      });
+  //     const response = await fetch(`/api/post/${id}`, {
+  //       method: 'PUT',
+  //     });
   
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        alert('Failed to update post');
-      }
-    }
-  };
+  //     if (response.ok) {
+  //       document.location.replace('/dashboard');
+  //     } else {
+  //       alert('Failed to update post');
+  //     }
+  //   }
+  // };
   document
     .querySelector('.new-post-form')
     .addEventListener('submit', newFormHandler);
   
-  document
-    .querySelector('.post-list')
-    .addEventListener('click', delButtonHandler);
+  // document
+  //   .querySelector('.post-list')
+  //   .addEventListener('click', delButtonHandler);
 
-  document
-    .querySelector('.post-list')
-    .addEventListener('submit', editFormHandler);
+  // document
+  //   .querySelector('.post-list')
+  //   .addEventListener('submit', editFormHandler);
   
