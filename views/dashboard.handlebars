@@ -6,9 +6,12 @@
 
 <button><a href="/dashboard/new">add post</a></button>
 
-{{#each posts as |post|}}
+{{#if posts.length}}
+<section>{{#each posts as |post|}}
 {{> post-content}}
+<a href="/post/{{post.id}}" class="editlink">Update Post</a>
 {{/each}}
-
+</section>
+{{/if}}
 
 <script src="/js/dashboard.js"></script>

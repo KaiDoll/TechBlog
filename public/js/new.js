@@ -5,7 +5,7 @@ const addPost = async function (event) {
     const title= document.querySelector('#post-title').value;
     const content = document.querySelector('#post-content').value;
 
-  await fetch("/api/post", {
+  await fetch("/api/post", { //the route directory
     method: "Post",
     body: JSON.stringify({
       title,

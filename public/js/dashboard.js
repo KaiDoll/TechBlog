@@ -1,10 +1,10 @@
-const newFormHandler = async (event) => {
+const newFormHandler = async (event) => { //id not defined
     event.preventDefault();
   
     //const username = document.querySelector('#post-username').value.trim();
     const title = document.querySelector('#post-title').value.trim();
     const content = document.querySelector('#post-content').value.trim();
-  
+
     if (title && content) {4
       const response = await fetch(`/api/post/${id}`, {
         method: 'POST',
@@ -22,21 +22,21 @@ const newFormHandler = async (event) => {
     }
   };
   
-  const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
+  // const delButtonHandler = async (event) => {
+  //   if (event.target.hasAttribute('data-id')) {
+  //     const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/post/${id}`, {
-        method: 'DELETE',
-      });
+  //     const response = await fetch(`/api/post/${id}`, {
+  //       method: 'DELETE',
+  //     });
   
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        alert('Failed to delete post');
-      }
-    }
-  };
+  //     if (response.ok) {
+  //       document.location.replace('/dashboard');
+  //     } else {
+  //       alert('Failed to delete post');
+  //     }
+  //   }
+  // };
   
   const editFormHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
