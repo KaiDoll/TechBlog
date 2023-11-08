@@ -6,9 +6,9 @@
 
   <div class="col-md-5">
     <h2>
-           <a href="/post/{{post.id}}">{{post.title}}</a> 
+    <a href="/post/{{post.id}}">{{post.title}}</a> 
     </h2>
-    <p>Created by {{user.username}} on {{post.createdAt}}</p>
+    <p>Created by {{post.user.username}} on {{post.createdAt}}</p>
   </div>
 
   {{!-- its not reading the id and username. --}}
