@@ -29,7 +29,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'No username found' });
       return;
     }
-    //if we find them then we check if their password is valid
+    //Find the, then we check if their password is valid
 
     const validPassword = await user.checkPassword(req.body.password);
 
@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
-//we send it to the front end
+//Send it to the front end
 
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {

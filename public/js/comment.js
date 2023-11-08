@@ -3,7 +3,6 @@ const commentFormHandler = async (event) => {
   
     // Collect values from the login form
     const username = document.querySelector('#user-login').value.trim();
-    //const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
   
     if (username && password) {
@@ -15,8 +14,7 @@ const commentFormHandler = async (event) => {
       });
   //send the information to api folder-user-routes
       if (response.ok) {
-        // If successful, redirect the browser to the profile page
-        document.location.replace(`/post/${id}`); 
+        // If successful, redirect the browser to the post page with unique id.
       } else {
         alert(response.statusText);
       }

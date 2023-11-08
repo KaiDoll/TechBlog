@@ -7,7 +7,7 @@ const logout = async () => {
   if (response.ok) {
     document.location.replace('/'); //sends user back to the homepage when they logout
   } else {
-    alert(response.statusText); //STRING ALERT!
+    alert(response.statusText); 
   }
 };
 

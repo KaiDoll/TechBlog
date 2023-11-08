@@ -1,7 +1,5 @@
-const newFormHandler = async (event) => { //id not defined
-    event.preventDefault();
+const newFormHandler = async (event) => { 
   
-    //const username = document.querySelector('#post-username').value.trim();
     const title = document.querySelector('#post-title').value.trim();
     const content = document.querySelector('#post-content').value.trim();
 

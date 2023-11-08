@@ -10,3 +10,4 @@ router.use('/comment', commentRoutes); //public folder
 
 
 module.exports = router;
+//Establising routes to user, post, and comment

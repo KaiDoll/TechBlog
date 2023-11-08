@@ -1,5 +1,3 @@
-// Route this page with NEWPOST
-
 const addPost = async function (event) {
     event.preventDefault();
     const title= document.querySelector('#post-title').value;

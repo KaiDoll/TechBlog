@@ -3,7 +3,6 @@ const loginFormHandler = async (event) => {
 
   // Collect values from the login form
   const username = document.querySelector('#user-login').value.trim();
-  //const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
   if (username && password) {
@@ -15,7 +14,7 @@ const loginFormHandler = async (event) => {
     });
 //send the information to api folder-user-routes
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
+ // If successful, redirect the browser to the dashboard.
       document.location.replace('/dashboard'); 
     } else {
       alert(response.statusText);
