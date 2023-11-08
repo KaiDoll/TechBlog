@@ -3,23 +3,11 @@
 <div class="row mb-4 post">
   <div class="col-md-5">
     <h2>
-      <a href="/post/{{post.id}}">{{user.username}}</a> 
+      <a href="/post/{{post.id}}">{{post.title}}</a> 
       {{!-- Gives option for user to click on the link. Takes them to post/1 which is comment handlebar page--}}
     </h2>
-    <p>
-      <span for="img" aria-label="money">💻</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{post.title}}</span>
-      needed!
-    </p>
-    <p>Created by {{user.username}}</p>
+    <p>Created by {{post.user.username}} on {{format_date post.createdAt}}</p>
   </div> 
   {{!-- If the post.user.name does not work than change the user to username --}}
-  <div class="col-md-7">
-    <p>
-    {{!-- {{post.title}} --}}
-      {{post.content}}
-    </p>
-  </div>
 </div>
 {{/each}}

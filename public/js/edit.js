@@ -6,7 +6,7 @@ const editFormHandler = async (event) => {
     const content = document.querySelector('#post-content').value.trim();
   
     if (title && content) {4
-      const response = await fetch(`/api/post/${id}`, {
+      const response = await fetch('/api/post/:id', {
         method: 'PUT',
         body: JSON.stringify({ title, content }),
         headers: {
@@ -24,7 +24,7 @@ const editFormHandler = async (event) => {
 
 // 
 document
-  .querySelector('.new-post-form')
+  .querySelector('#new-post-form')
   .addEventListener('click', editFormHandler);
 
 

@@ -1,9 +1,15 @@
 const delButtonHandler = async (event) => {
-      if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');
-    
-        const response = await fetch(`/api/post/${id}`, {
+
+
+      if (event.target.querySelector('btn-danger')) {
+        event.preventDefault();
+        const response = await fetch('/api/post/:id', {
           method: 'DELETE',
+          body: JSON.stringify({ title, content }),
+          headers: {
+            'Content-Type': 'application/json',
+          }
+          
         });
     
         if (response.ok) {
@@ -15,5 +21,4 @@ const delButtonHandler = async (event) => {
     };
     
     document
-  .querySelector('.post-list')
-  .addEventListener('click', delButtonHandler);
+  .querySelector('btn-danger').addEventListener('click', delButtonHandler);
