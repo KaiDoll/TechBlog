@@ -9,7 +9,7 @@
 {{#if posts.length}}
 <section>{{#each posts as |post|}}
 {{> post-content}}
-<a href="/dashboard/{{post.user.id}}" class="editlink">Update Post</a>
+<a href="/api/post/{{id}}" class="editlink">Update Post</a>
 {{/each}}
 </section>
 {{/if}}
