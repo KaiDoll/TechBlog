@@ -36,6 +36,13 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ![Start Survey Page](assets/images/survey.1.png)
 ![Submit Survey Page](assets/images/survey.2.png)
 
+![Login](1.png)
+![Sign Up](12.png)
+![Page once you login](13.png)
+![Dashboard page](14.png)
+![New Post](15.png)
+![Post on the dashboard](16.png)
+
 ## Technologies Used
 
 - JavaScript
@@ -58,7 +65,7 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ### <a href="https://github.com/KaiDoll/TechBlog">GitHub Repository</a>
 
-### <a href="https://bmancuso3.github.io/stress-free-me">Live Site</a>
+### <a href="https://techblogfourteen-7c87d84e74e7.herokuapp.com/login">Live Site</a>
 
 
 ## License
