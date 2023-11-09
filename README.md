@@ -30,12 +30,6 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ## Usage
 
-
-![Home Page](assets/images/login.1.png)
-![Login Page](assets/images/login.2.png)
-![Start Survey Page](assets/images/survey.1.png)
-![Submit Survey Page](assets/images/survey.2.png)
-
 ![Login](1.png)
 ![Sign Up](12.png)
 ![Page once you login](13.png)
